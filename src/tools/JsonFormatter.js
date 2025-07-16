@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, useEffect, useRef, useContext, useCallback } from 'react';
 import {
   Box, Typography, ToggleButtonGroup, ToggleButton,
   Button, Alert
@@ -16,7 +16,7 @@ export default function JsonFormatter() {
   const editorRef        = useRef();
 
   /* ---------------- core runner ---------------------------------- */
-  const run = src => {
+  const run = useCallback(src => {
     if (!src.trim()) { setErr(''); return; }
 
     const { ok, pretty, idx } =
@@ -27,7 +27,7 @@ export default function JsonFormatter() {
       setVal(pretty + tail);
       tail.trim() ? showErr(src, idx) : setErr('');
     } else showErr(src, idx);
-  };
+  }, [mode]);
 
   const showErr = (src, idx) => {
     const { line, col } = idxToLineCol(src, idx);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
+import React, { useState, useEffect, useContext, useRef, useCallback } from 'react';
 import {
   Box, Typography, ToggleButtonGroup, ToggleButton,
   Button, Alert
@@ -16,14 +16,14 @@ export default function JsonEscaper(){
   const editorRef        = useRef();
 
   /* -------------------------------- core ------------------------- */
-  const run = src=>{
+  const run = useCallback(src=>{
     if(!src.trim()){ setErr(''); return; }
     try{
       setValue(mode==='escape'?  escapeString(src)
                               : unescapeString(src));
       setErr('');
     }catch(e){ setErr(e.message); }
-  };
+  }, [mode]);
 
   /* persist */
   useEffect(()=>{ setCache(c=>({...c, escape:value})); },[value,setCache]);
