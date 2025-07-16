@@ -1,4 +1,3 @@
-```markdown
 # Common JSON Tools
 
 A tiny, single-page collection of JSON helpers built with  
@@ -69,4 +68,3 @@ common-tools/
 ## License
 
 MIT
-```
