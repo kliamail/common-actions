@@ -62,9 +62,3 @@ common-tools/
     tools/      one file per tool
   .env.example  template for environment variables
 ```
-
----
-
-## License
-
-MIT
