@@ -29,7 +29,7 @@ export default function JsonEscaper(){
   useEffect(()=>{ setCache(c=>({...c, escape:value})); },[value,setCache]);
 
   /* re-run on mode switch */
-  useEffect(()=>{ run(value); },[mode]);
+  useEffect(()=>{ run(value); },[run,value]);
 
   /* ------------- events ------------------------------------------ */
   const handlePaste = e=>{

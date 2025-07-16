@@ -39,7 +39,7 @@ export default function JsonFormatter() {
   useEffect(() => { setCache(c => ({ ...c, format: value })); }, [value, setCache]);
 
   /* re-format when mode toggles */
-  useEffect(() => { run(value); }, [mode]);
+  useEffect(() => { run(value); }, [run,value]);
 
   /* -------------- events ----------------------------------------- */
   const handlePaste = e => {
