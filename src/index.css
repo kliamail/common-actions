@@ -1,5 +1,15 @@
-.cm-editor, .cm-editor * { box-sizing: border-box; }
-.cm-editor { max-width:100%; }
-.cm-editor.cm-focused { outline: none; }
+.cm-editor, .cm-editor * {
+    box-sizing: border-box;
+}
 
-.cm-editor { transition: background-color .25s ease, color .25s ease; }
+.cm-editor {
+    max-width: 100%;
+}
+
+.cm-editor.cm-focused {
+    outline: none;
+}
+
+.cm-editor {
+    transition: background-color .25s ease, color .25s ease;
+}
