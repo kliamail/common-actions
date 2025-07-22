@@ -46,8 +46,8 @@ jobs:
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
         env:
-          REACT_APP_GA_ID: G-G5QD6MN30Q
-          REACT_APP_SITE_URL: https://epoha.org
+          REACT_APP_GA_ID: ${{ variables.REACT_APP_GA_ID }}
+          REACT_APP_SITE_URL: ${{ variables.REACT_APP_SITE_URL }}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
